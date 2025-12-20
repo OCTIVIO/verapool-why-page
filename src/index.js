@@ -1,12 +1,9 @@
 /**
  * Cloudflare Worker — "Why miners switch to VeraPool"
- * Copy-paste into Cloudflare Dashboard → Workers & Pages → Create Worker → Edit code → Deploy
  *
- * Notes:
- * - No external assets
- * - Inline CSS
- * - Google-safe meta tags (no earnings/profit claims)
- * - CSP locks down everything to self + no external requests
+ * Changes requested:
+ * - Canonical set to https://why.verapool.io
+ * - Removed "How to connect (Stratum)" button/link
  */
 
 export default {
@@ -30,7 +27,8 @@ export default {
       headers: {
         "content-type": "text/html; charset=utf-8",
         // Cache at the edge for 1 hour; browsers 5 min (tune as you like)
-        "cache-control": "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400",
+        "cache-control":
+          "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400",
         // Security + crawler-friendly headers
         "x-content-type-options": "nosniff",
         "x-frame-options": "DENY",
@@ -60,7 +58,7 @@ function buildHtml() {
   const title = "Why miners switch to VeraPool";
   const description =
     "A concise, miner-focused overview of VeraPool’s infrastructure-first approach: stable Stratum connectivity, low-latency endpoints, transparent payout logic, and non-custodial design.";
-  const canonical = "https://why.verapool.io"; // Change to your Worker domain if different
+  const canonical = "https://why.verapool.io";
   const brand = "VeraPool";
 
   // Minimal structured data (Google-safe): Organization + WebPage
@@ -107,9 +105,6 @@ function buildHtml() {
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="${escapeHtml(title)}" />
   <meta name="twitter:description" content="${escapeHtml(description)}" />
-
-  <!-- Optional: if you have a real favicon hosted on your main site -->
-  <!-- <link rel="icon" href="https://verapool.io/favicon.ico" /> -->
 
   <!-- Structured data -->
   <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
@@ -357,7 +352,6 @@ function buildHtml() {
 
         <div class="cta">
           <a class="btn" href="https://verapool.io" rel="nofollow">Go to VeraPool</a>
-          <a class="btn" href="https://verapool.io/how-to-mine" rel="nofollow">How to connect (Stratum)</a>
           <a class="btn" href="https://verapool.io/about" rel="nofollow">About & operations</a>
         </div>
 
