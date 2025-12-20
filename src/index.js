@@ -354,17 +354,12 @@ function buildHtml() {
           <a class="btn" href="https://verapool.io" rel="nofollow">Go to VeraPool</a>
           <a class="btn" href="https://verapool.io/about" rel="nofollow">About & operations</a>
         </div>
-
-        <p style="margin-top:14px;">
-          Tip: share this page privately in Discord/Telegram when someone asks “why should I switch?”
-        </p>
       </aside>
     </main>
 
     <footer>
       <div><strong>Non-custodial note:</strong> Miners retain full control of their payout addresses at all times.</div>
       <div style="margin-top:6px;">
-        Canonical: <code>${escapeHtml(canonical)}</code>
       </div>
     </footer>
   </div>
