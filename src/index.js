@@ -60,7 +60,7 @@ function buildHtml() {
   const title = "Why miners switch to VeraPool";
   const description =
     "A concise, miner-focused overview of VeraPool’s infrastructure-first approach: stable Stratum connectivity, low-latency endpoints, transparent payout logic, and non-custodial design.";
-  const canonical = "https://verapool.io/why"; // Change to your Worker domain if different
+  const canonical = "https://whu.verapool.io"; // Change to your Worker domain if different
   const brand = "VeraPool";
 
   // Minimal structured data (Google-safe): Organization + WebPage
